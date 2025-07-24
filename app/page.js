@@ -72,37 +72,48 @@ export default function Home() {
       {/* Categories */}
       <section className="px-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div className="relative h-48">
+          {/* CARD 1 */}
+          <div className="relative h-48 group overflow-hidden">
             <Image
               src="/images/new-arrivals.jpg"
               alt="New Arrivals"
               fill
-              className="object-cover"
+              className="object-cover transform transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <button className="bg-white px-4 py-2">NEW ARRIVALS</button>
+              <button className="bg-white px-4 py-2 transition-all duration-300 group-hover:bg-black group-hover:text-white">
+                NEW ARRIVALS
+              </button>
             </div>
           </div>
-          <div className="relative h-48">
+
+          {/* CARD 2 */}
+          <div className="relative h-48 group overflow-hidden">
             <Image
               src="/images/for-men.jpg"
               alt="For Men"
               fill
-              className="object-cover"
+              className="object-cover transform transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <button className="bg-white px-4 py-2">FOR MEN</button>
+              <button className="bg-white px-4 py-2 transition-all duration-300 group-hover:bg-black group-hover:text-white">
+                FOR MEN
+              </button>
             </div>
           </div>
-          <div className="relative h-48">
+
+          {/* CARD 3 */}
+          <div className="relative h-48 group overflow-hidden">
             <Image
               src="/images/for-women.jpg"
               alt="For Women"
               fill
-              className="object-cover"
+              className="object-cover transform transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <button className="bg-white px-4 py-2">FOR WOMEN</button>
+              <button className="bg-white px-4 py-2 transition-all duration-300 group-hover:bg-black group-hover:text-white">
+                FOR WOMEN
+              </button>
             </div>
           </div>
         </div>

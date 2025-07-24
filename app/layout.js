@@ -1,37 +1,47 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import {  FaPhoneAlt, FaTruck } from "react-icons/fa";
+import { FaPhoneAlt, FaTruck } from "react-icons/fa";
+import Link from "next/link";
 import "./globals.css";
 
 export const metadata = {
-  title: "Negi Watches",
-  description: "Premium watches collection",
+  title: "Negi Store",
+  description: "Modern watch store",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex flex-col  min-h-screen font-sans antialiased">
-              <div className="hidden md:flex justify-between items-center px-6 py-2 bg-black text-white">
-                <div className="flex items-center gap-2">
-                  <FaPhoneAlt className="text-[13px]" />
-                  <span>Need Help? +91 9315994129</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <FaTruck className="text-[16px]" />
-                  <span>Free Standard Shipping On Orders Above ₹999 India only</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <a href="#" className="hover:underline">
-                    Login
-                  </a>{" "}
-                  /{" "}
-                  <a href="#" className="hover:underline">
-                    Register
-                  </a>
-                </div>
-              </div>
-        
+        <div className="hidden md:flex justify-between items-center px-6 py-2 bg-black text-white">
+          <div className="flex items-center gap-2">
+            <FaPhoneAlt className="text-[13px]" />
+            <a href="tel:+919315994129" className="no-underline ">
+              Need Help? +91 9315994129
+            </a>
+          </div>
+          <div className="flex items-center gap-2">
+            <FaTruck className="text-[16px]" />
+            <span>Free Standard Shipping On Orders Above ₹999 India only</span>
+          </div>
+          {/* Login / Register */}
+          <div className="flex items-center gap-2 text-sm">
+            <Link
+              href="/login"
+              className="no-underline"
+            >
+              Login
+            </Link>{" "}
+            /{" "}
+            <Link
+              href="/register"
+              className="no-underline"
+            >
+              Register
+            </Link>
+          </div>
+        </div>
+
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

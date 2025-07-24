@@ -1,3 +1,4 @@
+"use client";
 import {
   FaFacebookF,
   FaInstagram,
@@ -5,6 +6,7 @@ import {
   FaYoutube,
   FaPinterestP,
 } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -31,19 +33,19 @@ export default function Footer() {
           <h3 className="font-semibold mb-2">INFORMATION</h3>
           <ul className="space-y-1 text-gray-700 mt-8">
             <li>
-              <a href="#">Shipping</a>
+              <Link href="/commingsoon">Shipping</Link>
             </li>
             <li>
-              <a href="#">Warranty & Authenticity</a>
+              <Link href="/commingsoon">Warranty & Authenticity</Link>
             </li>
             <li>
-              <a href="#">Terms & Conditions</a>
+              <Link href="/commingsoon">Terms & Conditions</Link>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <Link href="/commingsoon">Privacy Policy</Link>
             </li>
             <li>
-              <a href="#">Sustainability</a>
+              <Link href="/commingsoon">Sustainability</Link>
             </li>
           </ul>
         </div>
@@ -53,19 +55,19 @@ export default function Footer() {
           <h3 className="font-semibold mb-2">SERVICES</h3>
           <ul className="space-y-1 text-gray-700 mt-8">
             <li>
-              <a href="#">Sale</a>
+              <Link href="/commingsoon">Sale</Link>
             </li>
             <li>
-              <a href="#">Quick Ship</a>
+              <Link href="/commingsoon">Quick Ship</Link>
             </li>
             <li>
-              <a href="#">New Designs</a>
+              <Link href="/commingsoon">New Designs</Link>
             </li>
             <li>
-              <a href="#">Protection Plan</a>
+              <Link href="/commingsoon">Protection Plan</Link>
             </li>
             <li>
-              <a href="#">Gift Cards</a>
+              <Link href="/commingsoon">Gift Cards</Link>
             </li>
           </ul>
         </div>
@@ -75,19 +77,19 @@ export default function Footer() {
           <h3 className="font-semibold mb-2">HELP</h3>
           <ul className="space-y-1 text-gray-700 mt-8">
             <li>
-              <a href="#">Contact Us</a>
+              <Link href="/contact">Contact Us</Link>
             </li>
             <li>
-              <a href="#">About Us</a>
+              <Link href="/commingsoon">About Us</Link>
             </li>
             <li>
-              <a href="#">Reviews</a>
+              <Link href="/commingsoon">Reviews</Link>
             </li>
             <li>
-              <a href="#">Terms of Service</a>
+              <Link href="/commingsoon">Terms of Service</Link>
             </li>
             <li>
-              <a href="#">Refund Policy</a>
+              <Link href="/commingsoon">Refund Policy</Link>
             </li>
           </ul>
         </div>
@@ -99,11 +101,41 @@ export default function Footer() {
 
         {/* Right - Social Icons */}
         <div className="flex items-center gap-4 text-base">
-          <FaFacebookF />
-          <FaInstagram />
-          <FaXTwitter />
-          <FaYoutube />
-          <FaPinterestP />
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebookF />
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaXTwitter />
+          </a>
+          <a
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaYoutube />
+          </a>
+          <a
+            href="https://pinterest.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaPinterestP />
+          </a>
         </div>
       </div>
     </footer>

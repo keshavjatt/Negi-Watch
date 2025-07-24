@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Custom font stacks */
+body {
+    font-family: system-ui, sans-serif;
+}

@@ -44,41 +44,42 @@ export default function Home() {
       </section>
 
       {/* PREMIUM WATCHES */}
-      <section className="px-8">
-        <h2 className="text-2xl font-semibold mb-6">Premium Watches</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {watches.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="overflow-hidden">
-                <Image
-                  src={item.src}
-                  alt={item.name}
-                  width={400}
-                  height={400}
-                  className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div className="p-4">
-                <h2 className="text-sm text-gray-600 mb-1">Brand Watch</h2>
-                <p className="text-md font-semibold text-gray-800">
-                  {item.name}
-                </p>
-                <div className="mt-2">
-                  <span className="text-black font-semibold text-lg mr-2">
-                    ₹{item.price.toLocaleString("en-IN")}
-                  </span>
-                  <span className="text-gray-500 line-through">
-                    ₹{item.old.toLocaleString("en-IN")}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
+      <section className="px-4 sm:px-8">
+  <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6">Premium Watches</h2>
+  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6">
+    {watches.map((item, index) => (
+      <div
+        key={index}
+        className="bg-white rounded-md sm:rounded-lg overflow-hidden shadow hover:shadow-xl transition-shadow duration-300"
+      >
+        <div className="overflow-hidden">
+          <Image
+            src={item.src}
+            alt={item.name}
+            width={400}
+            height={400}
+            className="w-full h-40 sm:h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+          />
         </div>
-      </section>
+        <div className="p-3 sm:p-4">
+          <h2 className="text-xs sm:text-sm text-gray-600 mb-1">Brand Watch</h2>
+          <p className="text-sm sm:text-md font-semibold text-gray-800 line-clamp-2">
+            {item.name}
+          </p>
+          <div className="mt-1 sm:mt-2">
+            <span className="text-black font-semibold text-base sm:text-lg mr-2">
+              ₹{item.price.toLocaleString("en-IN")}
+            </span>
+            <span className="text-gray-500 line-through text-sm sm:text-base">
+              ₹{item.old.toLocaleString("en-IN")}
+            </span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Categories */}
       <section className="px-8">

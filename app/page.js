@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 const watches = [
@@ -42,27 +43,37 @@ export default function Home() {
         />
       </section>
 
-      {/* Best Sellers */}
+      {/* PREMIUM WATCHES */}
       <section className="px-8">
-        <h2 className="text-2xl font-semibold mb-6">PREMIUM WATCHES</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-          {watches.map((w, i) => (
-            <div key={i} className="space-y-2">
-              <Image
-                src={w.src}
-                alt={w.name}
-                width={300}
-                height={300}
-                className="object-cover"
-              />
-              <div className="text-sm font-medium">{w.name}</div>
-              {/* Old Price */}
-              <div className="text-sm text-gray-500 line-through">
-                {w.old ? `₹${w.old.toLocaleString("en-IN")}` : ""}
+        <h2 className="text-2xl font-semibold mb-6">Premium Watches</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {watches.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="overflow-hidden">
+                <Image
+                  src={item.src}
+                  alt={item.name}
+                  width={400}
+                  height={400}
+                  className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+                />
               </div>
-              {/* Current Price */}
-              <div className="text-lg font-semibold">
-                ₹{w.price.toLocaleString("en-IN")}
+              <div className="p-4">
+                <h2 className="text-sm text-gray-600 mb-1">Brand Watch</h2>
+                <p className="text-md font-semibold text-gray-800">
+                  {item.name}
+                </p>
+                <div className="mt-2">
+                  <span className="text-black font-semibold text-lg mr-2">
+                    ₹{item.price.toLocaleString("en-IN")}
+                  </span>
+                  <span className="text-gray-500 line-through">
+                    ₹{item.old.toLocaleString("en-IN")}
+                  </span>
+                </div>
               </div>
             </div>
           ))}

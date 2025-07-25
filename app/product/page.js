@@ -103,7 +103,7 @@ export default function ProductPage() {
             <div className="mt-4">
               <p className="text-lg text-gray-600">
                 Old Price:{" "}
-                <span className="line-through text-red-500">₹{product.old}</span>
+                <span className="line-through text-gray">₹{product.old}</span>
               </p>
               <p className="text-xl font-semibold text-black">
                 Now: ₹{product.price}

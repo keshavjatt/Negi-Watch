@@ -55,7 +55,7 @@ const watches = [
 export default function Home() {
   return (
     <div className="space-y-16">
-      {/* Hero */}
+      {/* Hero Section */}
       <section className="relative w-full h-[240px] sm:h-[400px] md:h-[600px] overflow-hidden">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"

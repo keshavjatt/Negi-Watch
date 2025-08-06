@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         {/* Information */}
-        <div>
+        <div className="sm:ml-27">
           <h3 className="font-semibold mb-2">INFORMATION</h3>
           <ul className="space-y-1 text-gray-700 mt-8">
             <li>
@@ -60,7 +60,7 @@ export default function Footer() {
         </div>
 
         {/* Services */}
-        <div>
+        <div className="sm:ml-27">
           <h3 className="font-semibold mb-2">SERVICES</h3>
           <ul className="space-y-1 text-gray-700 mt-8">
             <li>
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* Help */}
-        <div>
+        <div className="sm:ml-27">
           <h3 className="font-semibold mb-2">HELP</h3>
           <ul className="space-y-1 text-gray-700 mt-8">
             <li>

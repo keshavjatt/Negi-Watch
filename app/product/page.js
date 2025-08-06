@@ -2,41 +2,70 @@
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight, FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
-const products = [
+const watches = [
   {
-    src: "/images/img-01.jpg",
-    name: "Sonata Analog Black Dial Men's Watch",
-    old: 1999,
-    price: 1299,
-    desc: "The Sonata Analog Black Dial Men's Watch blends style and durability. Crafted for the modern man, it features a bold dial, water resistance, and precision timekeeping — perfect for both casual and formal wear.",
+    src: "/images/rolex-02.jpg",
+    name: "Rolex is an integrated and independent Swiss watch manufacture",
+    old: 85000,
+    price: 50000,
+    desc: "Rolex watches symbolize prestige, precision, and timeless elegance. Crafted in Switzerland, they are built to last and admired worldwide for their iconic design and mechanical innovation.",
   },
   {
-    src: "/images/img-02.jpg",
-    name: "Titan Neo Iv Analog Men's Watch",
-    old: 4499,
-    price: 2999,
-    desc: "The Titan Neo Iv combines elegance and toughness with its stainless steel build and stylish design. A premium accessory that reflects your unique taste in timepieces.",
+    src: "/images/casio.jpg",
+    name: "Casio is most commonly known for making durable and reliable electronic products",
+    old: 19000,
+    price: 10000,
+    desc: "Casio watches offer digital precision and rugged durability, perfect for everyday use. Known for innovation and value, Casio blends tech and style effortlessly.",
   },
   {
-    src: "/images/img-03.jpg",
-    name: "Fastrack Casual Analog Watch for Men",
-    old: 3295,
-    price: 2499,
-    desc: "Stay ahead of the trend with Fastrack’s Casual Analog Watch. Sporty, affordable, and reliable — it’s your everyday companion with a touch of youthfulness and energy.",
+    src: "/images/gshock.jpg",
+    name: "G-Shock watches are known for their exceptional durability, ruggedness, and innovative features",
+    old: 21995,
+    price: 10000,
+    desc: "G-Shock is the go-to watch for extreme conditions, built to resist shocks, water, and time. A must-have for adventurers and sports lovers.",
   },
   {
-    src: "/images/img-04.jpg",
-    name: "Timex Expedition Analog-Digital Watch",
-    old: 5995,
-    price: 4199,
-    desc: "Built for adventure, the Timex Expedition features both analog and digital displays, rugged design, and water resistance. A must-have for the outdoorsy man.",
+    src: "/images/pathek-philippe.jpg",
+    name: "Patek Philippe SA is a Swiss luxury watchmaker and clock manufacturer",
+    old: 700000,
+    price: 30000,
+    desc: "Patek Philippe stands for heritage and exclusivity. Each timepiece is a masterpiece of engineering, often passed down generations as a legacy.",
+  },
+  {
+    src: "/images/invicta.jpg",
+    name: "Many Invicta models feature robust specifications such as high water resistance",
+    old: 96890,
+    price: 50000,
+    desc: "Invicta watches offer bold styling and solid performance. Built for modern wearers who seek adventure with a splash of luxury.",
+  },
+  {
+    src: "/images/jacob&co.jpg",
+    name: "Jacob & Co. watches are known for their bold designs and high-end materials",
+    old: 89976,
+    price: 50000,
+    desc: "Jacob & Co. is for those who love extravagance. These watches blend art, gems, and timekeeping like no other.",
+  },
+  {
+    src: "/images/frederique-constant.jpg",
+    name: "Frederique Constant is known for its classical and refined timepieces of exceptional value",
+    old: 99500,
+    price: 25000,
+    desc: "Frederique Constant blends classical elegance with affordability. A perfect choice for refined taste at a reasonable price.",
+  },
+  {
+    src: "/images/nebula.jpg",
+    name: "Nebula is India's first solid gold watch brand from Titan Company Ltd",
+    old: 99424,
+    price: 40000,
+    desc: "Nebula watches exude heritage and richness. As Titan’s premium offering, they combine gold craftsmanship with timeless tradition.",
   },
 ];
 
 export default function ProductPage() {
   const [current, setCurrent] = useState(0);
-  const total = products.length;
+  const total = watches.length;
 
   const handlePrev = () => {
     setCurrent((prev) => (prev === 0 ? total - 1 : prev - 1));
@@ -46,7 +75,7 @@ export default function ProductPage() {
     setCurrent((prev) => (prev === total - 1 ? 0 : prev + 1));
   };
 
-  const product = products[current];
+  const product = watches[current];
 
   return (
     <div className="min-h-screen bg-white">
@@ -56,7 +85,9 @@ export default function ProductPage() {
         style={{ backgroundImage: "url('/images/banner.jpg')" }}
       >
         <div className="p-6 rounded-md text-center">
-          <h1 className="text-4xl font-bold uppercase tracking-widest">Product</h1>
+          <h1 className="text-4xl font-bold uppercase tracking-widest">
+            Product
+          </h1>
           <p className="mt-2 text-sm">
             <Link href="/">
               <span className="text-gray-700 cursor-pointer hover:text-black">
@@ -73,10 +104,12 @@ export default function ProductPage() {
         <div className="flex flex-col md:flex-row items-center gap-8 w-full">
           {/* Image & Arrows */}
           <div className="relative md:w-1/2 w-full">
-            <img
+            <Image
               src={product.src}
               alt={product.name}
-              className="w-full h-120 object-cover rounded-lg"
+              width={600}
+              height={600}
+              className="w-full h-[480px] object-cover rounded-lg"
             />
 
             {/* Left Arrow */}
@@ -103,10 +136,12 @@ export default function ProductPage() {
             <div className="mt-4">
               <p className="text-lg text-gray-600">
                 Old Price:{" "}
-                <span className="line-through text-gray">₹{product.old}</span>
+                <span className="line-through text-gray-500">
+                  ₹{product.old.toLocaleString("en-IN")}
+                </span>
               </p>
               <p className="text-xl font-semibold text-black">
-                Now: ₹{product.price}
+                Now: ₹{product.price.toLocaleString("en-IN")}
               </p>
             </div>
             <button className="mt-6 flex items-center gap-2 px-6 py-2 border border-black text-black bg-white rounded-full hover:bg-black hover:text-white transition-all cursor-pointer">
